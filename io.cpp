@@ -8,10 +8,10 @@ int main(int argc, char *argv[], char **envp)
     generateFile(1000000);
 
     // Copy file
-    // copyFile(100);
+    copyFile(100);
 
     // Show the generated file
-    // showFile();
+    showFile();
 
     auto execution_end = chrono::high_resolution_clock::now();
 

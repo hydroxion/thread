@@ -10,13 +10,13 @@ int main(int argc, char *argv[], char **envp)
     vectorData(numbers, 50000, 1000, 10000);
 
     // Show vector of random numbers
-    // showVector(numbers);
+    showVector(numbers);
 
     // Sort the vector of random numbers
     vector<int> sorted = breadSort(numbers, numbers.size());
 
     // Show the vector of random numbers sorted
-    // showVector(sorted);
+    showVector(sorted);
 
     auto execution_end = chrono::high_resolution_clock::now();
 
