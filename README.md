@@ -16,7 +16,7 @@ Concurrency CPU and I/O tests in C++ using threads.
 Install the G++ compiler:
 
 `apt install build-essential g++`
-<details>
+</details>
 
 #### Run
 
@@ -26,4 +26,4 @@ Install the G++ compiler:
 Compile the CPU example:
 
 `g++ cpu.cpp library/functions.cpp -o cpu.bin -std=c++17 && ./cpu.bin`
-<details>
+</details>
