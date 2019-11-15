@@ -35,3 +35,9 @@
 # Editor
 *.vs
 *.vscode
+
+# Assets
+.png
+.jpg
+.jpeg
+.txt

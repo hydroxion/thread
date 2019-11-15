@@ -12,6 +12,14 @@
 
 using namespace std;
 
+#include <fstream>
+
+#include <string>
+
+void generateFile(int, string inputFileName = "io.cpp", string outputFileName = "io.txt");
+
+void showFile(string inputFileName = "io.txt");
+
 int randomNumber(int, int);
 
 void vectorData(vector<int> &, int, int, int);

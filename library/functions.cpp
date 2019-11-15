@@ -1,5 +1,68 @@
 #include "functions.hpp"
 
+void generateFile(int repeat, string inputFileName, string outputFileName)
+{
+    ifstream inputFile(inputFileName);
+
+    if (!inputFile.is_open())
+    {
+        cerr << "Input file not found" << endl;
+
+        exit(1);
+    }
+
+    ofstream outputFile(outputFileName);
+
+    if (!inputFile.is_open())
+    {
+        cerr << "Was not possible to create the output file" << endl;
+
+        exit(1);
+    }
+
+    int counter = 0;
+
+    string line;
+
+    while (counter < repeat)
+    {
+
+        while (getline(inputFile, line))
+        {
+            // cout << line << endl;
+
+            outputFile << line << endl;
+        }
+
+        inputFile.clear();
+
+        inputFile.seekg(0, ios::beg);
+
+        counter++;
+    }
+
+    inputFile.close();
+
+    outputFile.close();
+}
+
+void showFile(string inputFileName)
+{
+    ifstream inputFile(inputFileName);
+
+    if (!inputFile.is_open())
+    {
+        cerr << "Input file not found" << endl;
+
+        exit(1);
+    }
+
+    string line;
+
+    while (getline(inputFile, line))
+        cout << line << endl;
+}
+
 int randomNumber(int start, int end)
 {
     auto rand = bind(uniform_int_distribution<int>{start, end},
