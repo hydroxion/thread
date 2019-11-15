@@ -53,6 +53,17 @@ kill  # Stop the executable
 
 </details>
 
+<details>
+<summary>Files</summary>
+
+To debug the generated file, two options are good to large files:
+
+1. [Glogg](https://glogg.bonnefon.org/)
+
+2. [Less](https://pt.wikipedia.org/wiki/Less)
+
+</details>
+
 ### References
 
 <details>
