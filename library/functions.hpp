@@ -18,6 +18,8 @@ using namespace std;
 
 void generateFile(int, string inputFileName = "io.cpp", string outputFileName = "io.txt");
 
+void copyFile(int, string inputFileName = "io.txt", string outputFileName = "copy/io.txt");
+
 void showFile(string inputFileName = "io.txt");
 
 int randomNumber(int, int);

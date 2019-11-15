@@ -7,6 +7,9 @@ int main(int argc, char *argv[], char **envp)
     // One milion generates a 1 GB file
     generateFile(1000000);
 
+    // Copy file
+    // copyFile(100);
+
     // Show the generated file
     // showFile();
 

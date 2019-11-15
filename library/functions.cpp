@@ -46,6 +46,39 @@ void generateFile(int repeat, string inputFileName, string outputFileName)
     outputFile.close();
 }
 
+void copyFile(int repeat, string inputFileName, string outputFileName)
+{
+    ifstream inputFile(inputFileName, ios::binary);
+
+    if (!inputFile.is_open())
+    {
+        cerr << "Input file not found" << endl;
+
+        exit(1);
+    }
+
+    int counter = 0;
+
+    while (counter < repeat)
+    {
+        string outputFileNameCache = outputFileName;
+
+        int index = outputFileNameCache.find_last_of("/");
+
+        outputFileNameCache.insert(index + 1, to_string(counter));
+
+        ofstream outputFile(outputFileNameCache, ios::binary);
+
+        outputFile << inputFile.rdbuf();
+
+        inputFile.clear();
+
+        inputFile.seekg(0, ios::beg);
+
+        counter++;
+    }
+}
+
 void showFile(string inputFileName)
 {
     ifstream inputFile(inputFileName);
