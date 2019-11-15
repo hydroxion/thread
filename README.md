@@ -6,7 +6,7 @@
 
 ---
 
-Concurrency CPU and I/O tests in C++ using threads.
+Concurrency [CPU](https://stackoverflow.com/questions/868568/what-do-the-terms-cpu-bound-and-i-o-bound-mean) bound and [I/O](https://stackoverflow.com/questions/868568/what-do-the-terms-cpu-bound-and-i-o-bound-mean) bound tests in C++ using threads.
 
 #### Setup
 
@@ -27,6 +27,15 @@ Install the G++ compiler:
 Compile the CPU example:
 
 `g++ cpu.cpp library/functions.cpp -o cpu.bin -std=c++17 && ./cpu.bin`
+
+</details>
+
+<details>
+<summary>I/O</summary>
+
+Compile the I/O example:
+
+`g++ io.cpp library/functions.cpp -o io.bin -std=c++17 && ./io.bin`
 
 </details>
 
@@ -81,6 +90,8 @@ To debug the generated file, two options are good to large files:
 
 [Bead Sort Algorithm](https://discourse.opengenus.org/t/bead-sort-algorithm/121)
 
+[What is the fastest sorting algorithm](https://www.quora.com/What-is-the-fastest-sorting-algorithm)
+
 </details>
 
 <details>
@@ -89,5 +100,27 @@ To debug the generated file, two options are good to large files:
 [Modern CPP features](https://github.com/AnthonyCalandra/modern-cpp-features)
 
 [CPP Cheatsheet](https://github.com/mortennobel/cpp-cheatsheet)
+
+</details>
+
+<details>
+<summary>Concurrency</summary>
+
+[Concurrent Programming with C++ 11](https://www.youtube.com/playlist?list=PL5jc9xFGsL8E12so1wlMS0r0hTQoJL74M)
+
+[Programming Concurrency In C++ - Part One](https://www.c-sharpcorner.com/article/programming-concurrency-in-cpp-part-1/)
+
+[Programming Concurrency In C++ - Part Two](https://www.c-sharpcorner.com/article/programming-concurrency-in-cpp-part-2/)
+
+[C++ Multithreading](https://www.tutorialspoint.com/cplusplus/cpp_multithreading.htm)
+
+</details>
+
+<details>
+<summary>Cuda</summary>
+
+[GPU Accelerated Computing with C and C++](https://developer.nvidia.com/how-to-cuda-c-cpp)
+
+[CUDA C/C++ Basics](https://www.nvidia.com/docs/IO/116711/sc11-cuda-c-basics.pdf)
 
 </details>
