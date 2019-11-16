@@ -15,7 +15,9 @@ Concurrency [CPU](https://stackoverflow.com/questions/868568/what-do-the-terms-c
 
 Install the G++ compiler:
 
-`apt install build-essential g++`
+```sh
+apt install build-essential g++
+```
 
 </details>
 
@@ -26,7 +28,9 @@ Install the G++ compiler:
 
 Compile the CPU example:
 
-`g++ cpu.cpp library/functions.cpp -o cpu.bin -std=c++17 && ./cpu.bin`
+```sh
+g++ cpu.cpp library/functions.cpp -o cpu.bin -std=c++17 && ./cpu.bin
+```
 
 </details>
 
@@ -35,7 +39,9 @@ Compile the CPU example:
 
 Compile the I/O example:
 
-`g++ io.cpp library/functions.cpp -o io.bin -std=c++17 && ./io.bin`
+```sh
+g++ io.cpp library/functions.cpp -o io.bin -std=c++17 && ./io.bin
+```
 
 </details>
 
@@ -56,7 +62,7 @@ And execute using some binary file as input:
 valgrind --tool=callgrind ./cpu.bin # io.bin
 ```
 
-The Valgrind will generate a *calgrind.out* file that can be interpreted by tools like [Gprof 2 Dot](https://github.com/jrfonseca/gprof2dot) or [kcache Grind](http://kcachegrind.sourceforge.net/html/Home.html)
+The Valgrind will generate a *calgrind.out* file that can be interpreted by tools like [Gprof 2 Dot](https://github.com/jrfonseca/gprof2dot) (`gprof2dot -f callgrind callgrind.out.* | dot -Tsvg -o output.svg`) or [kcache Grind](http://kcachegrind.sourceforge.net/html/Home.html)
 
 > These two tools are not demonstrated here in both cases: as Python dependencies and as System dependencies, its necessary that you install by yourself
 
