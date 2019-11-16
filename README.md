@@ -62,9 +62,11 @@ And execute using some binary file as input:
 valgrind --tool=callgrind ./cpu.bin # io.bin
 ```
 
-The Valgrind will generate a *calgrind.out* file that can be interpreted by tools like [Gprof 2 Dot](https://github.com/jrfonseca/gprof2dot) (`gprof2dot -f callgrind callgrind.out.* | dot -Tsvg -o output.svg`) or [kcache Grind](http://kcachegrind.sourceforge.net/html/Home.html)
+The Valgrind will generate a _calgrind.out_ file that can be interpreted by tools like [Gprof 2 Dot](https://github.com/jrfonseca/gprof2dot) (`gprof2dot -f callgrind callgrind.out.* | dot -Tsvg -o output.svg` and then convert from SVG to PNG) or [kcache Grind](http://kcachegrind.sourceforge.net/html/Home.html)
 
 > These two tools are not demonstrated here in both cases: as Python dependencies and as System dependencies, its necessary that you install by yourself
+
+More tools [here](https://stackoverflow.com/questions/375913/how-can-i-profile-c-code-running-on-linux?rq=1)
 
 </details>
 
@@ -72,6 +74,8 @@ The Valgrind will generate a *calgrind.out* file that can be interpreted by tool
 <summary>Google Chrome Tracing</summary>
 
 Its possible to generate a relatory by using some clock time like the Chrono C++ library, and format a JSON file that contains the time executions in miliseconds to show in the [Google Chrome Tracing](chrome://tracing/) native tool.
+
+More about [here](https://www.youtube.com/watch?v=xlAH4dbMVnU).
 
 </details>
 
