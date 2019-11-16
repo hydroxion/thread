@@ -39,6 +39,36 @@ Compile the I/O example:
 
 </details>
 
+#### Relatory
+
+<details>
+<summary>Valgrind</summary>
+
+Install the Valgrind:
+
+```sh
+apt install valgrind
+```
+
+And execute using some binary file as input:
+
+```sh
+valgrind --tool=callgrind ./cpu.bin # io.bin
+```
+
+The Valgrind will generate a *calgrind.out* file that can be interpreted by tools like [Gprof 2 Dot](https://github.com/jrfonseca/gprof2dot) or [kcache Grind](http://kcachegrind.sourceforge.net/html/Home.html)
+
+> These two tools are not demonstrated here in both cases: as Python dependencies and as System dependencies, its necessary that you install by yourself
+
+</details>
+
+<details>
+<summary>Google Chrome Tracing</summary>
+
+Its possible to generate a relatory by using some clock time like the Chrono C++ library, and format a JSON file that contains the time executions in miliseconds to show in the [Google Chrome Tracing](chrome://tracing/) native tool.
+
+</details>
+
 #### Debug
 
 <details>
@@ -113,6 +143,10 @@ To debug the generated file, two options are good to large files:
 [Programming Concurrency In C++ - Part Two](https://www.c-sharpcorner.com/article/programming-concurrency-in-cpp-part-2/)
 
 [C++ Multithreading](https://www.tutorialspoint.com/cplusplus/cpp_multithreading.htm)
+
+[Threads in C++](https://www.youtube.com/watch?v=wXBcwHwIt_I)
+
+[Function Pointers in C++](https://www.youtube.com/watch?v=p4sDgQ-jao4)
 
 </details>
 
