@@ -1,4 +1,36 @@
-#include "functions.hpp"
+#include <iostream>
+
+#include <functional>
+
+#include <random>
+
+#include <vector>
+
+#include <algorithm>
+
+#include <chrono>
+
+#include <fstream>
+
+#include <string>
+
+#include <mutex>
+
+#include <condition_variable>
+
+#include <thread>
+
+#include <future>
+
+using namespace std;
+
+namespace Thread
+{
+// Mutexes
+mutex mutexVectorData;
+
+// Condition variables
+condition_variable conditionVectorData;
 
 void generateFile(int repeat, string inputFileName, string outputFileName)
 {
@@ -110,7 +142,13 @@ void vectorData(vector<int> &numbers, int size, int start, int end)
 
     while (counter < size)
     {
+        unique_lock<mutex> locker(mutexVectorData);
+
         numbers.push_back(randomNumber(start, end));
+
+        locker.unlock();
+
+        conditionVectorData.notify_one();
 
         counter++;
     }
@@ -120,8 +158,20 @@ void showVector(vector<int> &numbers)
 {
     cout << "Numbers [ ";
 
-    for (int &number : numbers)
-        cout << number << " ";
+    int counter = 0;
+
+    while (counter < numbers.size())
+    {
+        unique_lock<mutex> locker(mutexVectorData);
+
+        conditionVectorData.wait(locker, [&]() { return !numbers.empty(); });
+
+        cout << numbers[counter] << " ";
+
+        locker.unlock();
+
+        counter++;
+    }
 
     cout << "]" << endl;
 }
@@ -181,3 +231,4 @@ vector<int> breadSort(vector<int> &numbers, int size)
 
     return sorted;
 }
+} // Thread

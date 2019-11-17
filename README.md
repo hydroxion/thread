@@ -32,6 +32,12 @@ Compile the CPU example:
 g++ cpu.cpp libraries/functions.cpp -o cpu.bin -std=c++17 && ./cpu.bin
 ```
 
+Compile the CPU thread example:
+
+```sh
+g++ cpuThread.cpp libraries/functionsThread.cpp -pthread -o cpuThread.bin -std=c++17 && ./cpuThread.bin
+```
+
 </details>
 
 <details>

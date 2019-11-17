@@ -2,6 +2,7 @@
 
 int main(int argc, char *argv[], char **envp)
 {
+    // Clock start
     auto execution_start = chrono::high_resolution_clock::now();
 
     // One milion generates a 1 GB file
@@ -13,9 +14,11 @@ int main(int argc, char *argv[], char **envp)
     // Show the generated file
     showFile();
 
+    // Clock end
     auto execution_end = chrono::high_resolution_clock::now();
 
-    cout << chrono::duration_cast<chrono::microseconds>(execution_end - execution_start).count() << " Seconds" << endl;
+    // Clock calcule
+    cout << chrono::duration_cast<chrono::microseconds>(execution_end - execution_start).count() << " Microseconds" << endl;
 
     return 0;
 }
