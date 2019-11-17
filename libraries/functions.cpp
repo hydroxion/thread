@@ -170,6 +170,8 @@ vector<int> breadSort(vector<int> &numbers, int size)
     }
 
     // Get sorted values
+    vector<int> sorted(size);
+
     for (int counter_size = 0; counter_size < size; counter_size++)
     {
         int counter_max = 0;
@@ -177,8 +179,8 @@ vector<int> breadSort(vector<int> &numbers, int size)
         for (; counter_max < max && breadManager(counter_size, counter_max, breads, max, -1); counter_max++)
             ;
 
-        numbers[counter_size] = counter_max;
+        sorted[counter_size] = counter_max;
     }
 
-    return numbers;
+    return sorted;
 }

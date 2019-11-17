@@ -29,7 +29,7 @@ apt install build-essential g++
 Compile the CPU example:
 
 ```sh
-g++ cpu.cpp library/functions.cpp -o cpu.bin -std=c++17 && ./cpu.bin
+g++ cpu.cpp libraries/functions.cpp -o cpu.bin -std=c++17 && ./cpu.bin
 ```
 
 </details>
@@ -40,7 +40,7 @@ g++ cpu.cpp library/functions.cpp -o cpu.bin -std=c++17 && ./cpu.bin
 Compile the I/O example:
 
 ```sh
-g++ io.cpp library/functions.cpp -o io.bin -std=c++17 && ./io.bin
+g++ io.cpp libraries/functions.cpp -o io.bin -std=c++17 && ./io.bin
 ```
 
 </details>
@@ -73,7 +73,7 @@ More tools [here](https://stackoverflow.com/questions/375913/how-can-i-profile-c
 <details>
 <summary>Google Chrome Tracing</summary>
 
-Its possible to generate a relatory by using some clock time like the Chrono C++ library, and format a JSON file that contains the time executions in miliseconds to show in the [Google Chrome Tracing](chrome://tracing/) native tool.
+Its possible to generate a relatory by using some clock time like the Chrono C++ libraries, and format a JSON file that contains the time executions in miliseconds to show in the [Google Chrome Tracing](chrome://tracing/) native tool.
 
 More about [here](https://www.youtube.com/watch?v=xlAH4dbMVnU).
 
