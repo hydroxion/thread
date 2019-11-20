@@ -37,9 +37,4 @@
 *.vscode
 
 # Assets
-.png
-.jpg
-.jpeg
 .txt
-.svg
-.xml
