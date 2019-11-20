@@ -6,7 +6,7 @@ int main(int argc, char *argv[], char **envp)
     auto execution_start = chrono::high_resolution_clock::now();
 
     // Generate file
-    generateFile(1000);
+    generateFile(10000);
 
     // Copy file
     copyFile(1000);

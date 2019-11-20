@@ -76,7 +76,7 @@ valgrind --tool=callgrind ./cpu.bin # io.bin
 
 The Valgrind will generate a _calgrind.out_ file that can be interpreted by tools like [Gprof 2 Dot](https://github.com/jrfonseca/gprof2dot) (`gprof2dot -f callgrind callgrind.out.* | dot -Tsvg -o output.svg` and then convert from SVG to PNG) or [kcache Grind](http://kcachegrind.sourceforge.net/html/Home.html)
 
-> These two tools are not demonstrated here in both cases: as Python dependencies and as System dependencies, its necessary that you install by yourself
+> These two tools are not demonstrated here in both cases: as Python dependencies and as System dependencies, its necessary that you install by yourself, to export the SVG file generated, use the [Ink Scape](https://inkscape.org/) (`inkscape -z -e output.png  input.svg`)
 
 More tools [here](https://stackoverflow.com/questions/375913/how-can-i-profile-c-code-running-on-linux?rq=1)
 
