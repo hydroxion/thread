@@ -26,11 +26,11 @@ using namespace std;
 
 namespace Thread
 {
-void generateFile(int, string, string);
+void generateFile(int, string inputFileName = "io.cpp", string outputFileName = "io.txt");
 
-void copyFile(int, string, string);
+void copyFile(int, string inputFileName = "io.txt", string outputFileName = "copy/io.txt");
 
-void showFile(string);
+void showFile(string inputFileName = "io.txt");
 
 int randomNumber(int, int);
 

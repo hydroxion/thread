@@ -49,6 +49,12 @@ Compile the I/O example:
 g++ io.cpp libraries/functions.cpp -o io.bin -std=c++17 && ./io.bin
 ```
 
+Compile the I/O thread example:
+
+```sh
+g++ ioThread.cpp libraries/functionsThread.cpp -pthread -o ioThread.bin -std=c++17 && ./ioThread.bin
+```
+
 </details>
 
 #### Relatory

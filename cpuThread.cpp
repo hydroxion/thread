@@ -13,7 +13,7 @@ int main(int argc, char *argv[], char **envp)
 
     thread thread1(Thread::vectorData, ref(numbers), 5, 1000, 10000);
 
-    thread1.join();
+    thread1.detach();
 
     // Show vector of random numbers
     thread thread2(Thread::showVector, ref(numbers));

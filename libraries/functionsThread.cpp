@@ -1,14 +1,21 @@
 #include "functionsThread.hpp"
 
+// The best approach to treat the change
+// of context would be to encapsulate the
+// resources that are used by more than
+// one thread, but once here each resource
+// is used only in two functions, this doesn't
+// show necessary
+
 #ifndef FUNCTIONS_THREAD
 
 #define FUNCTIONS_THREAD
 
 // Mutexes
-mutex mutexVectorData;
+mutex mutexVectorData; //  VectorData, showVector
 
 // Conditions
-condition_variable conditionVectorData;
+condition_variable conditionVectorData; //  VectorData, showVector
 
 #endif
 
@@ -143,7 +150,8 @@ void Thread::showVector(vector<int> &numbers)
     while (counter < numbers.size())
     {
         unique_lock<mutex> locker(mutexVectorData);
-        
+
+        // Spurious wakeup
         conditionVectorData.wait(locker, [&]() { return !numbers.empty(); });
 
         cout << numbers[counter] << " ";
