@@ -29,13 +29,13 @@ apt install build-essential g++
 Compile the CPU example:
 
 ```sh
-g++ cpu.cpp libraries/functions.cpp -o cpu.bin -std=c++17 && ./cpu.bin
+g++ cpu.cpp libraries/functions.cpp -o cpu.bin -std=c++17 -O3 && ./cpu.bin
 ```
 
 Compile the CPU thread example:
 
 ```sh
-g++ cpuThread.cpp libraries/functionsThread.cpp -pthread -o cpuThread.bin -std=c++17 && ./cpuThread.bin
+g++ cpuThread.cpp libraries/functionsThread.cpp -pthread -o cpuThread.bin -std=c++17 -O3 && ./cpuThread.bin
 ```
 
 </details>
@@ -46,13 +46,13 @@ g++ cpuThread.cpp libraries/functionsThread.cpp -pthread -o cpuThread.bin -std=c
 Compile the I/O example:
 
 ```sh
-g++ io.cpp libraries/functions.cpp -o io.bin -std=c++17 && ./io.bin
+g++ io.cpp libraries/functions.cpp -o io.bin -std=c++17 -O3 && ./io.bin
 ```
 
 Compile the I/O thread example:
 
 ```sh
-g++ ioThread.cpp libraries/functionsThread.cpp -pthread -o ioThread.bin -std=c++17 && ./ioThread.bin
+g++ ioThread.cpp libraries/functionsThread.cpp -pthread -o ioThread.bin -std=c++17 -O3 && ./ioThread.bin
 ```
 
 </details>

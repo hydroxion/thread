@@ -8,7 +8,7 @@ int main(int argc, char *argv[], char **envp)
     // Generate the vector of random numbers
     vector<int> numbers;
 
-    vectorData(numbers, 5, 1000, 10000);
+    vectorData(numbers, 10000, 0, 10000);
 
     // Show vector of random numbers
     showVector(numbers);

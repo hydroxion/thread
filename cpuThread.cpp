@@ -11,9 +11,9 @@ int main(int argc, char *argv[], char **envp)
     // Generate the vector of random numbers
     vector<int> numbers;
 
-    thread thread1(Thread::vectorData, ref(numbers), 5, 1000, 10000);
+    thread thread1(Thread::vectorData, ref(numbers), 10000, 0, 10000);
 
-    thread1.detach();
+    thread1.join();
 
     // Show vector of random numbers
     thread thread2(Thread::showVector, ref(numbers));

@@ -9,12 +9,12 @@ int main(int argc, char *argv[], char **envp)
     auto execution_start = chrono::high_resolution_clock::now();
 
     // Generate file
-    thread thread1([]() { Thread::generateFile(100); });
+    thread thread1([]() { Thread::generateFile(1000); });
 
     thread1.join();
 
     // Copy file
-    thread thread2([]() { Thread::copyFile(100); });
+    thread thread2([]() { Thread::copyFile(1000); });
 
     thread2.join();
 
