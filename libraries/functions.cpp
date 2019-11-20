@@ -8,16 +8,16 @@ void generateFile(int repeat, string inputFileName, string outputFileName)
     {
         cerr << "Input file not found" << endl;
 
-        exit(1);
+        return;
     }
 
     ofstream outputFile(outputFileName);
 
-    if (!inputFile.is_open())
+    if (!outputFile.is_open())
     {
         cerr << "Was not possible to create the output file" << endl;
 
-        exit(1);
+        return;
     }
 
     int counter = 0;
@@ -34,6 +34,8 @@ void generateFile(int repeat, string inputFileName, string outputFileName)
             outputFile << line << endl;
         }
 
+        outputFile << "\n";
+        
         inputFile.clear();
 
         inputFile.seekg(0, ios::beg);
@@ -54,7 +56,7 @@ void copyFile(int repeat, string inputFileName, string outputFileName)
     {
         cerr << "Input file not found" << endl;
 
-        exit(1);
+        return;
     }
 
     int counter = 0;
@@ -87,7 +89,7 @@ void showFile(string inputFileName)
     {
         cerr << "Input file not found" << endl;
 
-        exit(1);
+        return;
     }
 
     string line;

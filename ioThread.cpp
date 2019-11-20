@@ -1,18 +1,27 @@
-#include "libraries/functions.hpp"
+#include "libraries/functionsThread.hpp"
 
 int main(int argc, char *argv[], char **envp)
 {
+    // Show the amount of threads available
+    cout << "Hardware threads " << thread::hardware_concurrency() << endl;
+
     // Clock start
     auto execution_start = chrono::high_resolution_clock::now();
 
     // Generate file
-    generateFile(100);
+    thread thread1([]() { Thread::generateFile(100); });
+
+    thread1.join();
 
     // Copy file
-    copyFile(100);
+    thread thread2([]() { Thread::copyFile(100); });
+
+    thread2.join();
 
     // Show the generated file
-    showFile();
+    thread thread3([]() { Thread::showFile(); });
+
+    thread3.join();
 
     // Clock end
     auto execution_end = chrono::high_resolution_clock::now();

@@ -1,42 +1,44 @@
 #include "functionsThread.hpp"
 
-// The best approach to treat the change
-// of context would be to encapsulate the
-// resources that are used by more than
-// one thread, but once here each resource
-// is used only in two functions, this doesn't
-// show necessary
-
 #ifndef FUNCTIONS_THREAD
 
 #define FUNCTIONS_THREAD
 
 // Mutexes
-mutex mutexVectorData; //  VectorData, showVector
+mutex mutexVectorData;
+
+mutex mutexGenerateFile;
 
 // Conditions
-condition_variable conditionVectorData; //  VectorData, showVector
+condition_variable conditionVectorData;
+
+condition_variable conditionGenerateFile;
 
 #endif
 
+// A better approach to treat files is to
+// encapsulate
+
 void Thread::generateFile(int repeat, string inputFileName, string outputFileName)
 {
+    unique_lock<mutex> locker(mutexGenerateFile);
+
     ifstream inputFile(inputFileName);
 
     if (!inputFile.is_open())
     {
         cerr << "Input file not found" << endl;
 
-        exit(1);
+        terminate();
     }
 
     ofstream outputFile(outputFileName);
 
-    if (!inputFile.is_open())
+    if (!outputFile.is_open())
     {
         cerr << "Was not possible to create the output file" << endl;
 
-        exit(1);
+        terminate();
     }
 
     int counter = 0;
@@ -45,13 +47,14 @@ void Thread::generateFile(int repeat, string inputFileName, string outputFileNam
 
     while (counter < repeat)
     {
-
         while (getline(inputFile, line))
         {
             // cout << line << endl;
 
             outputFile << line << endl;
         }
+
+        outputFile << "\n";
 
         inputFile.clear();
 
@@ -63,17 +66,26 @@ void Thread::generateFile(int repeat, string inputFileName, string outputFileNam
     inputFile.close();
 
     outputFile.close();
+
+    locker.unlock();
+
+    conditionGenerateFile.notify_all();
 }
 
 void Thread::copyFile(int repeat, string inputFileName, string outputFileName)
 {
-    ifstream inputFile(inputFileName, ios::binary);
+    unique_lock<mutex> locker(mutexGenerateFile);
+
+    // Spurious wakeup
+    conditionGenerateFile.wait(locker, [&]() { return repeat; });
+
+    ifstream inputFile(inputFileName);
 
     if (!inputFile.is_open())
     {
         cerr << "Input file not found" << endl;
 
-        exit(1);
+        terminate();
     }
 
     int counter = 0;
@@ -96,23 +108,34 @@ void Thread::copyFile(int repeat, string inputFileName, string outputFileName)
 
         counter++;
     }
+
+    locker.unlock();
 }
 
 void Thread::showFile(string inputFileName)
 {
+    unique_lock<mutex> locker(mutexGenerateFile);
+
+    // Spurious wakeup
+    conditionGenerateFile.wait(locker, [&]() { return !inputFileName.empty(); });
+
     ifstream inputFile(inputFileName);
 
     if (!inputFile.is_open())
     {
         cerr << "Input file not found" << endl;
 
-        exit(1);
+        terminate();
     }
 
     string line;
 
     while (getline(inputFile, line))
         cout << line << endl;
+
+    inputFile.close();
+
+    locker.unlock();
 }
 
 int Thread::randomNumber(int start, int end)
