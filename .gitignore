@@ -1,3 +1,6 @@
+# Editor
+.vscode
+
 # Prerequisites
 *.d
 
@@ -32,9 +35,6 @@
 *.app
 *.bin
 
-# Editor
-*.vs
-*.vscode
-
 # Assets
-.txt
+copy/*.txt
+io.txt
