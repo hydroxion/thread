@@ -26,19 +26,19 @@ using namespace std;
 
 namespace Thread
 {
-void generateFile(int, string inputFileName = "io.cpp", string outputFileName = "io.txt");
+	void generateFile(int, string inputFileName = "io.cpp", string outputFileName = "io.txt");
 
-void copyFile(int, string inputFileName = "io.txt", string outputFileName = "copy/io.txt");
+	void copyFile(int, string inputFileName = "io.txt", string outputFileName = "copy/io.txt");
 
-void showFile(string inputFileName = "io.txt");
+	void showFile(string inputFileName = "io.txt");
 
-int randomNumber(int, int);
+	int randomNumber(int, int);
 
-void vectorData(vector<int> &, int, int, int);
+	void vectorData(vector<int> &, int, int, int);
 
-void showVector(vector<int> &);
+	void showVector(vector<int> &);
 
-short int breadManager(int, int, vector<short int> &, int, int);
+	short int breadManager(int, int, vector<short int> &, int, int);
 
-vector<int> breadSort(vector<int> &, int);
+	vector<int> breadSort(vector<int> &, int);
 }
