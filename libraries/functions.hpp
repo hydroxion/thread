@@ -10,11 +10,11 @@
 
 #include <chrono>
 
-using namespace std;
-
 #include <fstream>
 
 #include <string>
+
+using namespace std;
 
 void generateFile(int, string inputFileName = "io.cpp", string outputFileName = "io.txt");
 
