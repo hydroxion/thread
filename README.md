@@ -4,7 +4,7 @@ CPU and I/O benchmark.
 
 ## About
 
-Benchmark between I/O stream and CPU sorting with and without parallel computing. Read the [relatory](./relatory) for te details.
+Benchmark between I/O and CPU with and without parallel computing. Read the [relatory](./relatory) see the results.
 
 ## Built with
 
