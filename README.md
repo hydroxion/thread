@@ -4,7 +4,7 @@ CPU and I/O benchmark.
 
 ## About
 
-Benchmark between I/O and CPU with and without parallel computing. Read the [relatory](./relatory) see the results.
+Benchmark between I/O and CPU with and without parallel computing. Read the [relatory](./RELATORY.md) see the results.
 
 ## Built with
 
